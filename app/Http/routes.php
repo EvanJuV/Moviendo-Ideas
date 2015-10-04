@@ -23,10 +23,10 @@ Route::group(['prefix' => 'usuario'], function () {
   Route::get('update', ['as' => 'update_usuario', function() {
   	return View::make('usuario.edit');
   }]);
+  Route::get('proyecto', function() {
+    return View::make('usuario.proyecto');
+  });
   Route::get('{usuario_id}', 'UsuarioController@show');
-  Route::get('project', funtion() {
-    retun View::make('usuario.proyecto');
-  })
 });
 
 Route::group(['prefix' => 'proyecto'], function() {
