@@ -1,4 +1,5 @@
-
+@extends('layout')
+@section('content')
       <!-- Contenido -->
       <!-- Imagen de index-->
       <div class="container">
@@ -21,4 +22,4 @@
 
       <!--Footer-->
 
-        
+@stop
