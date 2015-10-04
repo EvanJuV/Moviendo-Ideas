@@ -1,5 +1,5 @@
 @extends('layout')
-@section('regform')
+@section('new_user')
 <!--Forma de registro para usuarios nuevos-->
 <div class="container">
   <div class="row">
