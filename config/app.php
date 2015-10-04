@@ -148,7 +148,7 @@ return [
         /*
          * Frontend Service Providers...
          */
-        Vendor\Skydiver\LaravelMaterializeCSS\MaterializeCSSServiceProvider::class,
+        'Skydiver\LaravelMaterializeCSS\MaterializeCSSServiceProvider',
     ],
 
     /*
