@@ -14,7 +14,7 @@
       <a class="waves-effect waves-light btn-large" href="{{ URL::route('new_usuario')}}">Registro</a>
     </div>
     <div class="col s2 offset-s1">
-      <a href="" class="waves-effect waves-light btn-large">Iniciar</a>
+      <a href="{{ URL::route('login')}}" class="waves-effect waves-light btn-large">Iniciar</a>
     </div>
   </div>
 </div>

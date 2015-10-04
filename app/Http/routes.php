@@ -32,12 +32,12 @@ Route::group(['prefix' => 'proyecto'], function() {
 
 Route::post('/userform', 'UsuarioController@newUsuario');
 
-Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::get('/auth/login', ['as' => 'login', 'uses' => 'Auth\AuthController@getLogin']);
 
-Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::post('/auth/login', 'Auth\AuthController@postLogin');
 
-Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('/auth/logout', 'Auth\AuthController@getLogout');
 
-Route::get('auth/login/fb', 'Auth\AuthController@facebookAuth');
+Route::get('/auth/login/fb', 'Auth\AuthController@facebookAuth');
 
 Route::get('/auth/login/fb/redirect', 'Auth\AuthController@facebookCallback');
