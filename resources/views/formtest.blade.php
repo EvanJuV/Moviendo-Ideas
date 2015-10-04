@@ -15,6 +15,7 @@
     <input type="text" name="tags" value="">
     <input type="email" name="email" value="">
     <input type="password" name="password" value="">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <button type="submit" name="submit">GO!</button>
   </form>
 </body>
