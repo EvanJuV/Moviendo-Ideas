@@ -13,10 +13,12 @@
 
 Route::get('/', function () {
   return view('welcome');
+
 });
 
 Route::get('/users', function () {
   return view('formtest');
 });
 
-Route::post('/userform', 'UsuarioController@newUsuario');
+Route::post('/userform', 'UsuarioController@store');
+Route::get('usuario/{usuario_id}', 'UsuarioController@show');
