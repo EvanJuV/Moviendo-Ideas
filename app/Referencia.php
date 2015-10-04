@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Referencia extends Model {
+    protected $table = 'referencias';
 
-		protected $table = 'referencias';
     public function usuario() {
-      return $this->belongsTo('App/Usuario');
+      return $this->hasOne('App/Usuario');
     }
 }
 

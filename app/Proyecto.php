@@ -13,7 +13,7 @@ class Proyecto extends Model
     }
 
     public function asesor() {
-      return $this->belongsTo('App\Asesor');
+      return $this->hasOne('App\Asesor');
     }
 }
 
