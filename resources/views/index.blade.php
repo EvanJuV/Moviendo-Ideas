@@ -1,6 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
+      <meta charset="UTF-8">
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -26,6 +27,7 @@
            </ul>
          </div>
        </nav>
+
       <br>
       <br>
       <!-- Contenido -->
@@ -38,10 +40,10 @@
         </div>
         <!-- Botones de registro e inicio de sesion-->
         <div class="row">
-          <div class="col s2 offset-s4">
-            <a class="waves-effect waves-light btn-large">Registro</a>
+          <div class="col s2 offset-s3">
+            <a class="waves-effect waves-light btn-large" href="registro.blade.php">Registro</a>
           </div>
-          <div class="col s2">
+          <div class="col s2 offset-s1">
             <a class="waves-effect waves-light btn-large">Iniciar</a>
           </div>
         </div>
