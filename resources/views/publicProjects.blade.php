@@ -49,7 +49,7 @@
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">Proyecto contra el proyecto contra la hambruna</span>
-              <p>No nos agrada el proyecto de la izquierda >.< </p>
+              <p>No nos agrada el proyecto de la izquierda</p>
             </div>
             <div class="card-action">
               <a href="#">Mas....</a>
