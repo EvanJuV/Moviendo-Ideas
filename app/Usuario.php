@@ -2,8 +2,6 @@
 
 namespace App;
 
-namespace App;
-
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -22,16 +20,16 @@ class Usuario extends Model implements AuthenticatableContract, AuthorizableCont
     	return $this->hasMany('App\Referencia');
     }
 
-    public function proyecto() {
-    	return $this->hasOne('App\Proyecto');
-    }
-
     public function permiso() {
     	return $this->belongsToOne('App\Permiso');
     }
 
-		public function asociados() {
-			return $this->hasManyThrough('App\Asociados', 'App\Proyecto');
+		public function rol() {
+			return $this->belongsToOne('App\Asociado');
+		}
+
+		public function proyecto() {
+			return $this->rol()->proyecto();
 		}
 
 		protected $hidden = ['password', 'remember_token'];

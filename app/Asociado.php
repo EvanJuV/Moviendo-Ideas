@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Asociado extends Model {
-  protected $table = 'asociado';
+  protected $table = 'asociados';
 
   public function proyecto() {
     return this->hasOne('App\Proyecto');
