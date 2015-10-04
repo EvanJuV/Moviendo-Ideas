@@ -1,0 +1,21 @@
+<?php
+class UsuarioController extends Controller {
+  public function newUsuario() {
+    DB::table('usuarios')->insert([
+      'nombres' => Request::input('nombres'),
+      'apellidos' => Request::input('apellidos'),
+      'fecha_nacimiento' => Request::input('fecha_nacimiento'),
+      'estado' => Request::input('estado'),
+      'municipio' => Request::input('municipio'),
+      'calle' => Request::input('calle'),
+      'numero' => Request::input('numero'),
+      'cp' => Request::input('cp'),
+      'ife_link' => Request::input('ife_link'),
+      'tags' => Request::input('tags'),
+      'email' => Request::input('email'),
+      'password' => Request::input('password')
+    ]);
+
+    return true;
+  }
+}
