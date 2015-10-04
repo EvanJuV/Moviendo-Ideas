@@ -31,6 +31,6 @@ class ProyectoController extends Controller {
 	}
 
 	public function show($proyecto_id) {
-    return view('proyecto.show', ['proyecto' => Usuario::findOrFail($proyecto_id)]);
+    return view('proyecto.show', ['proyecto' => Proyecto::findOrFail($proyecto_id)]);
 	}
 }
