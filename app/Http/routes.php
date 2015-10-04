@@ -26,6 +26,9 @@ Route::group(['prefix' => 'usuario'], function () {
   Route::get('proyecto', function() {
     return View::make('usuario.proyecto');
   });
+  Route::get('proyecto/detalle', function() {
+    return View::make('usuario.proyecto-detalle');
+  });
   Route::get('{usuario_id}', 'UsuarioController@show');
 });
 
