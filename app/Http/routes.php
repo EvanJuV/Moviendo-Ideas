@@ -26,6 +26,10 @@ Route::group(['prefix' => 'usuario'], function () {
   Route::get('{usuario_id}', 'UsuarioController@show');
 });
 
+Route::group(['prefix' => 'proyecto'], function() {
+	Route::get('index', 'ProyectoController@index');
+});
+
 Route::post('/userform', 'UsuarioController@newUsuario');
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
