@@ -12,13 +12,12 @@
 */
 
 Route::get('/', function () {
-  return view('welcome');
+  return View::make('index');
 });
 
-Route::get('/users', function () {
-  return view('formtest');
+Route::get('/new_user', function () {
+  return View::make('usuario.new');
 });
 
 Route::post('/userform', 'UsuarioController@store');
 Route::get('usuario/{usuario_id}', 'UsuarioController@show');
->>>>>>> master

@@ -144,8 +144,9 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        'Intervention\Image\ImageServiceProvider'
 
+        // Backen Service Providers...
+        'Intervention\Image\ImageServiceProvider',
 
         /*
          * Frontend Service Providers...
