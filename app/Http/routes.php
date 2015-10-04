@@ -32,6 +32,7 @@ Route::group(['prefix' => 'proyecto'], function() {
 	Route::get('new', function() {
 		return View::make('proyecto.new');
 	});
+  Route::post('new', 'ProyectoController@store');
 	Route::get('update', function() {
 		return View::make('proyecto.edit');
 	});

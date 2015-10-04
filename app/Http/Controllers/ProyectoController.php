@@ -20,6 +20,8 @@ class ProyectoController extends Controller {
 		$proyecto->titulo = Request::input('titulo');
 		$proyecto->descripcion = Request::input('descripcion');
 		$proyecto->inversion = Request::input('inversion');
+
+		return redirect('proyecto/' . $proyecto->id);
 	}
 
 	public function update($proyecto_id) {

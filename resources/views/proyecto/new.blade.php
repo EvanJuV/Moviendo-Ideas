@@ -2,8 +2,8 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<form class="col s12">
-
+		<form class="col s12" method="post" action="/proyecto/new">
+			{!! csrf_field() !!}
 			<div class="row">
 				<div class="input-field col s10 offset-s1">
 					<input name="NombreProyecto" type="text" class="validate">
@@ -31,7 +31,7 @@
 				    <div><input type="text" name="mytext[]" class="validate"></div>
 				</div>
 			</div>
-			
+
 			<div class="row">
 				<div class="input-field col s10 offset-s1">
 					<input name="inversion" type="text" class="validate">
@@ -41,10 +41,10 @@
 
 			<div class="row">
 				<div class="col s2 offset-s5">
-					<button type="submit">Crear</button>
+					<button type="submit" class="btn">Crear</button>
 				</div>
 			</div>
-			
+
 		</form>
 	</div>
 </div>
