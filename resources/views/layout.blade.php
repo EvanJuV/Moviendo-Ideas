@@ -8,10 +8,10 @@
 	<title>Moviendo Ideas</title>
 </head>
 <body>
-	
+
 	<!-- Menu de navegación responsiva-->
-      <nav>
-         <div class="nav-wrapper">
+      <nav class="blue lighten-2">
+         <div class="nav-wrapper" style="padding-left: 10px">
            <a href="{{ URL::route('home') }}" class="brand-logo">Moviendo Ideas</a>
            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
            <ul class="right hide-on-med-and-down">

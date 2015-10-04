@@ -95,6 +95,6 @@ class AuthController extends Controller
         return 'Error';
       }
 
-      return redirect()->intended();
+      return redirect()->intended('/proyecto/index');
     }
 }
