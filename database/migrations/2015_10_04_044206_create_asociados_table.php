@@ -31,3 +31,5 @@ class CreateAsociadosTable extends Migration
         Schema::drop('asociados');
     }
 }
+
+?>
