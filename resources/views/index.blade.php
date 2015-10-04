@@ -1,21 +1,35 @@
 @extends('layout')
 @section('content')
-<!-- Contenido -->
-<!-- Imagen de index-->
-<div class="container">
-  <div class="row">
-    <div class="col s8 offset-s2">
-      <img class="responsive-img" src="http://www.ecatepec.com/wp-content/uploads/2014/10/JARDINECATEPEC.jpg">
-    </div>
-  </div>
-  <!-- Botones de registro e inicio de sesion-->
-  <div class="row">
-    <div class="col s2 offset-s3">
-      <a class="waves-effect waves-light btn-large" href="{{ URL::route('new_usuario')}}">Registro</a>
-    </div>
-    <div class="col s2 offset-s1">
-      <a href="{{ URL::route('login')}}" class="waves-effect waves-light btn-large">Iniciar</a>
-    </div>
-  </div>
+<div class="slider fullscreen">
+  <ul class="slides">
+    <li>
+      <img src="http://www.ecatepec.com/wp-content/uploads/2014/10/JARDINECATEPEC.jpg"> <!-- random image -->
+      <div class="caption center-align">
+        <h3>This is our big Tagline!</h3>
+        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+      </div>
+    </li>
+    <li>
+      <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->
+      <div class="caption left-align">
+        <h3>Left Aligned Caption</h3>
+        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+      </div>
+    </li>
+    <li>
+      <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->
+      <div class="caption right-align">
+        <h3>Right Aligned Caption</h3>
+        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+      </div>
+    </li>
+    <li>
+      <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->
+      <div class="caption center-align">
+        <h3>This is our big Tagline!</h3>
+        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+      </div>
+    </li>
+  </ul>
 </div>
 @stop

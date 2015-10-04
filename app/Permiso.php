@@ -8,7 +8,7 @@ class Permiso extends Model {
   protected $table = 'permisos';
 
   public function usuario() {
-    return $this->hasOne('App\Usuario');
+    return $this->belongsTo('App\Usuario');
   }
 }
 

@@ -21,18 +21,18 @@ class Usuario extends Model implements AuthenticatableContract, AuthorizableCont
     }
 
     public function permiso() {
-    	return $this->belongsToOne('App\Permiso');
+    	return $this->hasOne('App\Permiso');
     }
 
-		public function rol() {
-			return $this->belongsToOne('App\Asociado');
-		}
+	public function rol() {
+		return $this->belongsToOne('App\Asociado');
+	}
 
-		public function proyecto() {
-			return $this->rol()->proyecto();
-		}
+	public function proyecto() {
+		return $this->rol()->proyecto();
+	}
 
-		protected $hidden = ['password', 'remember_token'];
+	protected $hidden = ['password', 'remember_token'];
 }
 
 ?>
