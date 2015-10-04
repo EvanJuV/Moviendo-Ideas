@@ -145,6 +145,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Frontend Service Providers...
+         */
+        Vendor\Skydiver\LaravelMaterializeCSS\MaterializeCSSServiceProvider::class,
     ],
 
     /*
