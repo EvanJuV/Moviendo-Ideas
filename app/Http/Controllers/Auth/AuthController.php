@@ -7,6 +7,10 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use SocialNorm\Exceptions\ApplicationRejectedException;
+use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
+use SocialAuth;
+use Log;
 
 class AuthController extends Controller
 {
@@ -42,9 +46,12 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'nombres' => 'required|max:255',
+            'apellidos' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+            'fecha_nacimiento' => 'required',
+            'ife_link' => 'required'
         ]);
     }
 
@@ -56,10 +63,39 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        return Usuario::create([
+            'nombres' => $data['nombres'],
+            'apellidos' => $data['apellidos'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'fecha_nacimiento' => $data['fecha_nacimiento'],
+            'estado' => $data['estado'],
+            'municipio' => $data['municipio'],
+            'calle' => $data['calle'],
+            'numero' => $data['numer'],
+            'cp' => $data['cp'],
+            'ife_link' => $data['ife_link'],
         ]);
+    }
+
+    public function facebookAuth() {
+      return SocialAuth::authorize('facebook');
+    }
+
+    public function facebookCallback() {
+      try {
+        SocialAuth::login('facebook', function($user, $details) {
+          $user->nombres = $details->raw()['first_name'];
+          $user->apellidos = $details->raw()['last_name'];
+          $user->email = $details->raw()['email'];
+          $user->save();
+        });
+      } catch (ApplicationRejectedException $e) {
+        return 'Fail' . $e;
+      } catch (InvalidAuthorizationCodeException $e) {
+        return 'Error';
+      }
+
+      return redirect()->intended();
     }
 }
