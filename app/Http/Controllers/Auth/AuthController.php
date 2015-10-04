@@ -7,6 +7,10 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use SocialNorm\Exceptions\ApplicationRejectedException;
+use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
+use SocialAuth;
+use Log;
 
 class AuthController extends Controller
 {
@@ -72,5 +76,26 @@ class AuthController extends Controller
             'cp' => $data['cp'],
             'ife_link' => $data['ife_link'],
         ]);
+    }
+
+    public function facebookAuth() {
+      return SocialAuth::authorize('facebook');
+    }
+
+    public function facebookCallback() {
+      try {
+        SocialAuth::login('facebook', function($user, $details) {
+          $user->nombres = $details->raw()['first_name'];
+          $user->apellidos = $details->raw()['last_name'];
+          $user->email = $details->raw()['email'];
+          $user->save();
+        });
+      } catch (ApplicationRejectedException $e) {
+        return 'Fail' . $e;
+      } catch (InvalidAuthorizationCodeException $e) {
+        return 'Error';
+      }
+
+      return redirect()->intended();
     }
 }

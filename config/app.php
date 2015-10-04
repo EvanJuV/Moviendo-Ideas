@@ -144,8 +144,16 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        /*
+         * Backen Service Providers...
+         */
         'Intervention\Image\ImageServiceProvider',
-        'AdamWathan\EloquentOAuthL5\EloquentOAuthServiceProvider'
+        'AdamWathan\EloquentOAuthL5\EloquentOAuthServiceProvider',
+
+        /*
+         * Frontend Service Providers...
+         */
+        'Skydiver\LaravelMaterializeCSS\MaterializeCSSServiceProvider',
     ],
 
     /*

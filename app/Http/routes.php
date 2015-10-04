@@ -1,8 +1,5 @@
 <?php
 
-use SocialNorm\Exceptions\ApplicationRejectedException;
-use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -15,27 +12,21 @@ use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
 */
 
 Route::get('/', function () {
-  return view('welcome');
+  return View::make('index');
 });
-
-Route::get('/users', function () {
-  return view('formtest');
+Route::get('/new_user', function () {
+  return View::make('usuario.new');
 });
-
 Route::post('/userform', 'UsuarioController@newUsuario');
 
-Route::get('/login/fb', function() {
-  try {
-    SocialAuth::login('facebook');
-  } catch (ApplicationRejectedException $e) {
-    //El usuario dijo que no
-  } catch (InvalidAuthorizationCodeException $e) {
-    //Se intento autentificar con un codigo invalido
-  }
+Route::get('auth/login', 'Auth\AuthController@getLogin');
 
-  return redirect()->intended('/dash');
-});
+Route::post('auth/login', 'Auth\AuthController@postLogin');
 
-Route::get('/login', 'Auth\AuthController@loginGet');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-Route::post('/login', 'Auth\AuthController@loginPost');
+Route::get('auth/login/fb', 'Auth\AuthController@facebookAuth');
+
+Route::get('/auth/login/fb/redirect', 'Auth\AuthController@facebookCallback');
+
+Route::get('usuario/{usuario_id}', 'UsuarioController@show');

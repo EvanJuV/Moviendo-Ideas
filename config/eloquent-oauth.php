@@ -6,7 +6,7 @@ return [
 		'facebook' => [
 			'client_id' => '450670178473690',
 			'client_secret' => '18af807a80e2f8f8f60f49c6aef0a458',
-			'redirect_uri' => 'https://moviendoideas.com/fbredirect',
+			'redirect_uri' => 'http://localhost:8000/auth/login/fb/redirect',
 			'scope' => [email],
 		],
 		'google' => [
