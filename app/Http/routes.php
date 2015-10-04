@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
+
+Route::get('/users', function () {
+  return view('formtest');
+});
+
+Route::post('/userform', 'UsuarioController@newUsuario');
