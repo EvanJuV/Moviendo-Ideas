@@ -1,5 +1,5 @@
 @extends('layout')
-@section('menu')
+@section('menuinicio')
 <nav>
    <div class="nav-wrapper">
      <a href="#!" class="brand-logo">Moviendo Ideas</a>

@@ -12,11 +12,11 @@
 */
 
 Route::get('/', function () {
-    return View::make('layout');
+    return View::make('index');
 });
 
 Route::get('/new_user', function () {
-  return View::make('usuario.regform');
+  return View::make('usuario.new');
 });
 
 Route::post('/userform', 'UsuarioController@store');

@@ -10,7 +10,7 @@
 <body>
 	
 	<!-- Menu de navegación responsiva-->
-      @yield('menuInicio')
+      @yield('menuinicio')
 
        <br/>
        <br/>

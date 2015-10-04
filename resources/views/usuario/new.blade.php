@@ -1,5 +1,5 @@
 @extends('layout')
-@section('content')
+@section('regform')
 <!--Forma de registro para usuarios nuevos-->
 <div class="container">
   <div class="row">
@@ -26,20 +26,28 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s5 offset-s1">
+        <div class="input-field col s4 offset-s1">
           <input id="Calle" type="text" class="validate">
           <label for="Calle">Calle:</label>
         </div>
-        <div class="input-field col s5">
+        <div class="input-field col s3">
           <input id="Numero" type="text" class="validate">
           <label for="Numero">Numero:</label>
+        </div>
+         <div class="input-field col s3">
+          <input id="Codigo" type="text" class="validate">
+          <label for="Codigo">Codigo Postal:</label>
         </div>
       </div>
 
       <div class="row">
-        <div class="input-field col s10 offset-s1">
+        <div class="input-field col s5 offset-s1">
           <input id="IFE" type="text" class="validate">
           <label for="IFE">IFE:</label>
+        </div>
+        <div class="input-field col s5">
+          <input id="Telefono" type="text" class="validate">
+          <label for="Telefono">Teléfono:</label>
         </div>
       </div>
 
