@@ -11,13 +11,17 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', ['as' => 'home', function () {
   return View::make('index');
-});
+}]);
 
-Route::get('/new_user', function () {
-  return View::make('usuario.new');
+Route::group(['prefix' => 'usuario'], function () {
+  Route::post('create', array('uses' => 'UsuarioController@store'));
+  Route::get('new', ['as' => 'new_usuario', function() {
+	  return View::make('usuario.new');
+  }]);
+  Route::get('update', ['as' => 'update_usuario', function() {
+  	return View::make('usuario.update');
+  }]);
+  Route::get('{usuario_id}', 'UsuarioController@show');
 });
-
-Route::post('/userform', 'UsuarioController@store');
-Route::get('usuario/{usuario_id}', 'UsuarioController@show');

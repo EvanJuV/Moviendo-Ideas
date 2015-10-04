@@ -12,7 +12,7 @@
 	<!-- Menu de navegación responsiva-->
       <nav>
          <div class="nav-wrapper">
-           <a href="#!" class="brand-logo">Moviendo Ideas</a>
+           <a href="{{ URL::route('home') }}" class="brand-logo">Moviendo Ideas</a>
            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
            <ul class="right hide-on-med-and-down">
              <li><a href=".html">Explorar</a></li>
@@ -32,6 +32,12 @@
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
-	<script type="text/javascript">$( document ).ready(function(){ $(".button-collapse").sideNav();})</script>
+	<script type="text/javascript">
+    $('.datepicker').pickadate({
+      selectMonths: true, // Creates a dropdown to control month
+      selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+    $( document ).ready(function(){ $(".button-collapse").sideNav();})
+  </script>
 </body>
 </html>

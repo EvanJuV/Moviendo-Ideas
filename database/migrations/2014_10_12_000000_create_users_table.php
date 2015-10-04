@@ -17,11 +17,11 @@ class CreateUsersTable extends Migration
             $table->string('nombres');
             $table->string('apellidos');
             $table->date('fecha_nacimiento');
-            $table->string('estado');
-            $table->string('municipio');
-            $table->string('calle');
-            $table->string('numero');
-            $table->string('cp');
+            $table->string('estado')->nullable();
+            $table->string('municipio')->nullable();
+            $table->string('calle')->nullable();
+            $table->string('numero')->nullable();
+            $table->string('cp')->nullable();
             $table->string('ife_link');
             $table->text('tags');
             $table->string('email')->unique();
