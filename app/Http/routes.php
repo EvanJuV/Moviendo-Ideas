@@ -1,5 +1,8 @@
 <?php
 
+use SocialNorm\Exceptions\ApplicationRejectedException;
+use SocialNorm\Exceptions\InvalidAuthorizationCodeException;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -20,3 +23,19 @@ Route::get('/users', function () {
 });
 
 Route::post('/userform', 'UsuarioController@newUsuario');
+
+Route::get('/login/fb', function() {
+  try {
+    SocialAuth::login('facebook');
+  } catch (ApplicationRejectedException $e) {
+    //El usuario dijo que no
+  } catch (InvalidAuthorizationCodeException $e) {
+    //Se intento autentificar con un codigo invalido
+  }
+
+  return redirect()->intended('/dash');
+});
+
+Route::get('/login', 'Auth\AuthController@loginGet');
+
+Route::post('/login', 'Auth\AuthController@loginPost');
