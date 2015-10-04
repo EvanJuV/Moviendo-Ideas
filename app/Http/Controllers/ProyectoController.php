@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use DB;
 use Log;
 use Request;
 use App\Proyecto;
@@ -16,6 +15,22 @@ class ProyectoController extends Controller {
 	}
 
 	public function store() {
-		
+		$proyecto = new Proyecto();
+
+		$proyecto->titulo = Request::input('titulo');
+		$proyecto->descripcion = Request::input('descripcion');
+		$proyecto->inversion = Request::input('inversion');
+	}
+
+	public function update($proyecto_id) {
+		$proyecto = Proyecto::find($proyecto_id);
+
+		$proyecto->titulo = Request::input('titulo');
+		$proyecto->descripcion = Request::input('descripcion');
+		$proyecto->inversion = Request::input('inversion');
+	}
+
+	public function show($proyecto_id) {
+    return view('proyecto.show', ['proyecto' => Usuario::findOrFail($proyecto_id)]);
 	}
 }

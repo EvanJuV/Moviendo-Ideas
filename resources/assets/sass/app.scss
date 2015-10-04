@@ -1,2 +1,9 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+.slider {
+	z-index: -1;
+}
+
+nav {
+	z-index: 9;
+}

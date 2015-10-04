@@ -5,10 +5,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Permiso extends Model {
-  protected $table = 'permiso';
+  protected $table = 'permisos';
 
   public function usuario() {
-    return $this->hasOne('App\Usuario');
+    return $this->belongsTo('App\Usuario');
   }
 }
 

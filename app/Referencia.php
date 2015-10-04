@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Referencia extends Model {
 
-		protected $table = 'referencia';
+		protected $table = 'referencias';
     public function usuario() {
       return $this->belongsTo('App/Usuario');
     }

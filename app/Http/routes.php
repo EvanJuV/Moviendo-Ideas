@@ -21,13 +21,21 @@ Route::group(['prefix' => 'usuario'], function () {
 	  return View::make('usuario.new');
   }]);
   Route::get('update', ['as' => 'update_usuario', function() {
-  	return View::make('usuario.update');
+  	return View::make('usuario.edit');
   }]);
   Route::get('{usuario_id}', 'UsuarioController@show');
 });
 
 Route::group(['prefix' => 'proyecto'], function() {
 	Route::get('index', 'ProyectoController@index');
+	Route::post('create', array('uses' => 'ProyectoController@store'));
+	Route::get('new', function() {
+		return View::make('proyecto.new');
+	});
+	Route::get('update', function() {
+		return View::make('proyecto.edit');
+	});
+	Route::get('{proyecto_id}', 'ProyectoController@show');
 });
 
 Route::post('/userform', 'UsuarioController@newUsuario');

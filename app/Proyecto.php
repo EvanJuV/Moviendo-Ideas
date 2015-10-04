@@ -9,7 +9,7 @@ class Proyecto extends Model
     protected $table = 'proyectos';
 
     public function asociados() {
-      return $this->belongsToMany('App\Asociado');
+      return $this->hasMany('App\Asociado');
     }
 
     public function asesor() {

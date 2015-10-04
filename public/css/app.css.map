@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAEA;EACC,YAAY,EADJ;;AAIT;EACC,WAAW,EADP","file":"app.css","sourcesContent":["// @import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\n\n.slider {\n\tz-index: -1;\n}\n\nnav {\n\tz-index: 9;\n}"],"sourceRoot":"/source/"}
